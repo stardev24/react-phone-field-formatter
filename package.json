@@ -1,17 +1,31 @@
 {
-  "name": "reactcomponent1",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-phone-field-formatter",
+  "version": "1.0.0",
+  "author": {
+    "name": "Saikumar"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": ["dist"],
   "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "@material-ui/core": "^4.4.2",
+    "react-app-polyfill": "*",
+    "react-scripts": "3.1.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-dom": "^16.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-examples": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build":
+    "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-test-renderer": "^16.9.0"
   }
 }
