@@ -14,20 +14,20 @@ class PhoneNumberInput extends React.Component {
   }
   formatPhoneNumber(phoneNumStr){
       let formatedPhoneNumber = ('' + phoneNumStr ).replace(/\D/g, '')
-      let pattern = formatedPhoneNumber.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+      let pattern = formatedPhoneNumber.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
       if (pattern) {
         let interlCode = (pattern[1] ? '+1 ' : '')
-        return [interlCode, '(', pattern[2], ') ', pattern[3], '-', pattern[4]].join('')
+        return [interlCode, '(', pattern[2], ') ', pattern[3], '-', pattern[4]].join('');
       }
       return null
   }
   validateNumber(phoneNumStr){
     if(phoneNumStr === ""){
-      this.setState({validationError:""})
+      this.setState({validationError:""});
     }else{
       let correctPattern = /^[\d ()+-]+$/
       let isValid = correctPattern.test(phoneNumStr)
-      this.setState(isValid ? {validationError:''}:{validationError:'Please enter valid phone number'})
+      this.setState(isValid ? {validationError:''}:{validationError:'Please enter valid phone number'});
     }
 
   }
