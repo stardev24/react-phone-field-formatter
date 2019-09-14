@@ -3,7 +3,7 @@ A library of React components created using `create-react-app`.
 
 ## Installation
 Run the following command:
-`npm install react-phone-field-formatter`
+`npm install react-mui-phone-field-formatter`
 
 ## How to use
 
