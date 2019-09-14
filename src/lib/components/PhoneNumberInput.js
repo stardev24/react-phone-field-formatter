@@ -13,20 +13,27 @@ class PhoneNumberInput extends React.Component {
     this.validateNumber = this.validateNumber.bind(this)
   }
   formatPhoneNumber(phoneNumStr){
-      var formatedPhoneNumber = ('' + phoneNumStr ).replace(/\D/g, '')
-      var pattern = formatedPhoneNumber.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+      let formatedPhoneNumber = ('' + phoneNumStr ).replace(/\D/g, '')
+      let pattern = formatedPhoneNumber.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
       if (pattern) {
-        var interlCode = (pattern[1] ? '+1 ' : '')
+        let interlCode = (pattern[1] ? '+1 ' : '')
         return [interlCode, '(', pattern[2], ') ', pattern[3], '-', pattern[4]].join('')
       }
       return null
   }
-  validateNumber(){
+  validateNumber(phoneNumStr){
     console.log("Validaton is in progress")
+    let incorrectPattern = /^[a-zA-Z._@#$%&*!~]+$/i
+    let inValid = incorrectPattern.match(phoneNumStr)
+    return inValid ? this.setState({validationError:'Please enter valid phone number'}) : false
+
   }
   handleChange(event) {
-    let reformatedPhoneNumber = event? this.formatPhoneNumber(event.target.value) : ''
-    this.setState({value: reformatedPhoneNumber,validationError:''});
+    let invalidResult = this.validateNumber(event.target.value)
+    if(!invalidResult){
+      let reformatedPhoneNumber = event? this.formatPhoneNumber(event.target.value) : ''
+      this.setState({value: reformatedPhoneNumber});
+    }
   }
 
   render() {
