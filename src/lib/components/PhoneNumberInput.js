@@ -23,9 +23,9 @@ class PhoneNumberInput extends React.Component {
   }
   validateNumber(phoneNumStr){
     console.log("Validaton is in progress")
-    let incorrectPattern = /^[a-zA-Z._@#$%&*!~]+$/i
-    let inValid = incorrectPattern.match(phoneNumStr)
-    return inValid ? this.setState({validationError:'Please enter valid phone number'}) : false
+    let correctPattern = /^[\d ()+-]+$/
+    let isValid = correctPattern.test(phoneNumStr)
+    this.setState(isValid ? {validationError:''}:{validationError:'Please enter valid phone number'})
 
   }
   handleChange(event) {
