@@ -1,19 +1,19 @@
 {
   "name": "react-mui-phone-field-formatter",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "author": {
     "name": "Saikumar"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@babel/runtime": "^7.6.0",
     "@material-ui/core": "^4.4.2",
+    "ansi-regex": "^4.1.0",
     "react": "^16.9.0",
     "react-app-polyfill": "*",
     "react-dom": "^16.9.0",

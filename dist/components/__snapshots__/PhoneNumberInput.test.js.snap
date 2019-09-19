@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhoneTextInput renders properly 1`] = `
+Array [
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline simple-text-input"
+    onClick={[Function]}
+  >
+    <input
+      className="MuiInputBase-input MuiInput-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="(541) 754-3010"
+      type="text"
+      value=""
+    />
+  </div>,
+  <p
+    id="notify"
+  >
+    
+  </p>,
+]
+`;
